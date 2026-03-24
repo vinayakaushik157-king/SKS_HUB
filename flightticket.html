@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKS HUB - Flight Ticket</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background: #e0e0e0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .ticket-card { 
+            background: white; 
+            width: 400px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            overflow: hidden;
+            border-top: 10px solid #ff8c00;
+        }
+        .header { 
+            padding: 20px; 
+            text-align: center; 
+            border-bottom: 2px dashed #ddd;
+        }
+        .header h2 { margin: 0; color: #ff8c00; letter-spacing: 2px; }
+        .content { padding: 30px; }
+        .info-group { margin-bottom: 20px; }
+        .label { 
+            font-size: 11px; 
+            color: #999; 
+            text-transform: uppercase; 
+            display: block; 
+            margin-bottom: 2px;
+        }
+        .value { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: #222; 
+        }
+        .route-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff8f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        .plane { font-size: 24px; color: #ff8c00; }
+        .footer { 
+            background: #f9f9f9; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        button { 
+            background: #ff8c00; 
+            color: white; 
+            border: none; 
+            padding: 10px 30px; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        button:hover { background: #e67e00; }
+        
+        @media print {
+            button { display: none; }
+            body { background: white; }
+            .ticket-card { box-shadow: none; border: 1px solid #ff8c00; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="ticket-card">
+    <div class="header">
+        <h2>SKS HUB</h2>
+        <small>Official Boarding Pass</small>
+    </div>
+
+    <div class="content">
+        <div class="route-container">
+            <div>
+                <span class="label">From</span>
+                <span class="value" id="out_from">---</span>
+            </div>
+            <div class="plane">✈</div>
+            <div style="text-align: right;">
+                <span class="label">To</span>
+                <span class="value" id="out_to">---</span>
+            </div>
+        </div>
+
+        <div class="info-group">
+            <span class="label">Passenger Name</span>
+            <span class="value" id="out_name">---</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+            <div class="info-group">
+                <span class="label">Age</span>
+                <span class="value" id="out_age">---</span>
+            </div>
+            <div class="info-group" style="text-align: right;">
+                <span class="label">Travel Date</span>
+                <span class="value" id="out_date">---</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button onclick="window.print()">Print E-Ticket</button>
+    </div>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    document.getElementById('out_name').innerText = urlParams.get('name') || "Not Provided";
+    document.getElementById('out_age').innerText  = urlParams.get('age')  || "N/A";
+    document.getElementById('out_from').innerText = urlParams.get('from') || "Unknown";
+    document.getElementById('out_to').innerText   = urlParams.get('to')   || "Unknown";
+    document.getElementById('out_date').innerText = urlParams.get('date') || "Not Set";
+</script>
+
+</body>
+</html>

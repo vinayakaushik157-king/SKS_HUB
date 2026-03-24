@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKS HUB - Cab Booking</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+transition:0.3s ease;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+}
+
+/* NAVBAR */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:black;
+border-bottom:2px solid #ff8c00;
+}
+
+.logo{
+font-size:24px;
+color:#ff8c00;
+font-weight:bold;
+}
+
+nav a{
+margin:0 12px;
+text-decoration:none;
+color:white;
+}
+
+nav a:hover{
+color:#ff8c00;
+}
+
+/* HERO */
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 10%;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.left{
+flex:1;
+min-width:300px;
+}
+
+.left h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.left p{
+color:#ccc;
+margin-bottom:30px;
+}
+
+/* FORM */
+.booking-form{
+background:#222;
+padding:25px;
+border-radius:12px;
+border:1px solid #ff8c00;
+width:320px;
+}
+
+.booking-form input,
+.booking-form select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:none;
+border-radius:6px;
+background:#111;
+color:white;
+}
+
+.booking-form button{
+width:100%;
+padding:12px;
+background:#ff8c00;
+border:none;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+}
+
+/* IMAGE */
+.right img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">🚖 SKS HUB</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="flight.html">Flights</a>
+<a href="bus.html">Bus</a>
+<a href="railways.html">Railways</a>
+<a href="cab.html">Cab</a>
+<a href="hotel booking.html">Hotels</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="left">
+<h1>Get Your Ride in Seconds 🚀</h1>
+<p>No waiting. No stress. Just ride.</p>
+
+<div class="booking-form">
+
+<form action="cabdetails.html" method="GET">
+
+<label>Pickup Location</label>
+<input list="locations" name="pickup" placeholder="Pickup Location" required>
+
+<label>Drop Location</label>
+<input list="locations" name="drop" placeholder="Drop Location" required>
+
+<datalist id="locations">
+<option value="Chennai">
+<option value="Coimbatore">
+<option value="Bangalore">
+<option value="Hyderabad">
+<option value="Mumbai">
+<option value="Delhi">
+</datalist>
+
+<label>Date</label>
+<input type="date" name="date" required>
+
+<label>Select Cab</label>
+<select name="cab">
+<option>Mini</option>
+<option>Sedan</option>
+<option>SUV</option>
+<option>Traveller</option>
+</select>
+
+<button type="submit">Confirm Booking</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="right">
+<img src="taxi background.jpeg">
+</div>
+
+</section>
+
+</body>
+</html>
