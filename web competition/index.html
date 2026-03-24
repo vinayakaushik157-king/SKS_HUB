@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKS HUB</title>
+
+<style>
+
+/* SMOOTH SCROLL */
+html{
+scroll-behavior: smooth;
+}
+
+/* GENERAL */
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0b0b0b;
+color:white;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+background:black;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:22px;
+font-weight:bold;
+color:#ff8c00;
+}
+
+.logo img{
+height:40px;
+}
+
+/* NAV LINKS */
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:white;
+font-size:16px;
+}
+
+nav a:hover{
+color:#ff8c00;
+}
+
+/* RIGHT SIDE */
+.user-section{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+/* LOGIN + LOGOUT */
+.login, .logout{
+background:#ff8c00;
+border:none;
+padding:8px 16px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.logout{
+background:red;
+color:white;
+}
+
+/* USER NAME */
+.username{
+color:#ff8c00;
+font-weight:bold;
+}
+
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+
+background-image:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)),
+url("https://www.spitiholidayadventure.com/storage/5970ab6b933d7.jpg");
+
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero span{
+color:#ff8c00;
+}
+
+.hero p{
+color:#ccc;
+max-width:600px;
+font-size:18px;
+}
+
+.buttons{
+margin-top:25px;
+}
+
+/* FIXED BUTTON */
+.start{
+background:#ff8c00;
+border:none;
+padding:14px 28px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+text-decoration:none;
+color:black;
+display:inline-block;
+}
+
+.bookings{
+background:#222;
+color:white;
+border:none;
+padding:14px 28px;
+border-radius:8px;
+cursor:pointer;
+margin-left:10px;
+}
+
+.bookings:hover{
+background:#ff8c00;
+color:black;
+}
+
+/* SERVICES */
+.services{
+padding:70px 20px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+padding:30px;
+width:230px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border:1px solid #ff8c00;
+}
+
+.card button{
+margin-top:12px;
+padding:10px 15px;
+border:none;
+background:#ff8c00;
+color:black;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+background:black;
+margin-top:40px;
+color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+<img src="logo.jpeg">
+<span>SKS HUB</span>
+</div>
+
+<nav>
+<a href="flight.html">Flights</a>
+<a href="bus.html">Bus</a>
+<a href="railways.html">Railways</a>
+<a href="cab.html">Cab</a>
+<a href="hotel booking.html">Hotels</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<div class="user-section">
+
+<span class="username" id="username"></span>
+
+<button class="login" id="loginBtn" onclick="goToLogin()">Login</button>
+
+<button class="logout" id="logoutBtn" onclick="logout()" style="display:none;">
+Logout
+</button>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>Book Everything <span>in One Place</span></h1>
+
+<p>
+Flights, buses, trains, cabs and hotels — plan your travel easily with SKS HUB.
+</p>
+
+<div class="buttons">
+
+<!-- ✅ FIXED BUTTON -->
+<a href="#services" class="start">Start Booking</a>
+
+<button class="bookings" onclick="window.location.href='mybookings.html'">
+My Bookings
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ✅ ADDED ID HERE -->
+<section class="services" id="services">
+
+<h2>Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>✈ Flight Booking</h3>
+<a href="flight.html"><button>Book Now</button></a>
+</div>
+
+<div class="card">
+<h3>🚌 Bus Booking</h3>
+<a href="bus.html"><button>Book Now</button></a>
+</div>
+
+<div class="card">
+<h3>🚆 Railway Booking</h3>
+<a href="railways.html"><button>Book Now</button></a>
+</div>
+
+<div class="card">
+<h3>🚗 Cab Booking</h3>
+<a href="cab.html"><button>Book Now</button></a>
+</div>
+
+<div class="card">
+<h3>🏨 Hotel Booking</h3>
+<a href="roombooking.html"><button>Book Now</button></a>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+<p>© 2026 SKS HUB Travel Platform</p>
+</footer>
+
+
+<script>
+
+// CHECK LOGIN STATUS
+let user = localStorage.getItem("loggedInUser");
+
+if(user){
+document.getElementById("username").innerText = "👤 " + user;
+document.getElementById("loginBtn").style.display = "none";
+document.getElementById("logoutBtn").style.display = "inline-block";
+}
+
+// GO TO LOGIN PAGE
+function goToLogin(){
+window.location.href = "login.html";
+}
+
+// LOGOUT
+function logout(){
+localStorage.removeItem("loggedInUser");
+window.location.reload();
+}
+
+</script>
+
+</body>
+</html>

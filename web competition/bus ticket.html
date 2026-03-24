@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Passenger Details</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+color:white;
+
+/* UPDATED BACKGROUND */
+background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+url('bus1.png');   /* CHANGED HERE */
+background-size:cover;
+background-position:center right;
+}
+
+/* MAIN BOX */
+.box{
+width:450px;
+margin:40px auto;
+padding:30px;
+background:rgba(20,20,20,0.9);
+border-radius:15px;
+box-shadow:0 0 30px rgba(255,140,0,0.4);
+}
+
+/* TITLE */
+h2{
+text-align:center;
+color:#ff8c00;
+}
+
+/* INPUTS */
+input, select{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+background:#1c1c1c;
+color:white;
+}
+
+/* PASSENGER CARD */
+.passenger-box{
+background:#1a1a1a;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:14px;
+margin-top:20px;
+background:#ff8c00;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* ADD BUTTON */
+.add-btn{
+background:#333;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>🚌 Passenger Details</h2>
+
+<form action="payment.html" method="GET">
+
+<select name="busType" required>
+<option value="">Select Bus Type</option>
+<option>MTC</option>
+<option>Deluxe</option>
+<option>Sleeper</option>
+<option>Double-Decker Sleeper</option>
+</select>
+
+<input name="from" placeholder="From" required>
+<input name="to" placeholder="To" required>
+<input type="date" name="date" required>
+
+<div id="passengerContainer">
+
+<div class="passenger-box">
+<h4>Passenger 1</h4>
+<input name="name1" placeholder="Name" required>
+<input type="number" name="age1" placeholder="Age" required>
+<select name="gender1">
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
+
+</div>
+
+<button type="button" class="add-btn" onclick="addPassenger()">+ Add Passenger</button>
+
+<button>Proceed to Payment</button>
+
+</form>
+
+</div>
+
+<script>
+let count = 1;
+
+function addPassenger(){
+count++;
+
+const container = document.getElementById("passengerContainer");
+
+const div = document.createElement("div");
+div.classList.add("passenger-box");
+
+div.innerHTML = `
+<h4>Passenger ${count}</h4>
+<input name="name${count}" placeholder="Name" required>
+<input type="number" name="age${count}" placeholder="Age" required>
+<select name="gender${count}">
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+`;
+
+container.appendChild(div);
+}
+</script>
+
+</body>
+</html>

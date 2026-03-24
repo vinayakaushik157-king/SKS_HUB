@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking Confirmed</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+transition:0.3s;
+}
+
+body{
+color:white;
+background:linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+url('logo white car balck background.png');
+background-size:cover;
+background-position:center;
+}
+
+/* 🔥 NAVBAR */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:black;
+border-bottom:2px solid #ff8c00;
+}
+
+.logo{
+font-size:22px;
+color:#ff8c00;
+font-weight:bold;
+}
+
+/* NAV BUTTONS */
+nav a{
+text-decoration:none;
+}
+
+.nav-btn{
+padding:8px 14px;
+margin:0 6px;
+background:#111;
+color:white;
+border-radius:6px;
+font-size:14px;
+border:1px solid transparent;
+}
+
+/* Hover */
+.nav-btn:hover{
+background:#ff8c00;
+color:black;
+transform:scale(1.05);
+}
+
+/* Click */
+.nav-btn:active{
+transform:scale(0.95);
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:20px;
+}
+
+.hero img{
+width:220px;
+filter:drop-shadow(0 0 15px rgba(255,140,0,0.7));
+}
+
+/* CONTAINER */
+.container{
+max-width:500px;
+margin:20px auto;
+padding:20px;
+}
+
+/* SUCCESS */
+.success{
+text-align:center;
+font-size:22px;
+color:lightgreen;
+margin-bottom:25px;
+font-weight:bold;
+}
+
+/* CARD */
+.card{
+background:#1a1a1a;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 0 15px rgba(0,0,0,0.6);
+border-left:4px solid #ff8c00;
+}
+
+h2{
+color:#ff8c00;
+margin-bottom:15px;
+}
+
+p{
+margin:10px 0;
+color:#ccc;
+}
+
+/* CAB BOX */
+.cab-box{
+background:#111;
+padding:12px;
+border-radius:10px;
+margin-top:10px;
+text-align:center;
+color:#ff8c00;
+font-weight:bold;
+}
+
+/* DRIVER */
+.driver{
+display:flex;
+align-items:center;
+gap:15px;
+margin-top:10px;
+}
+
+.driver-icon{
+font-size:40px;
+background:#111;
+padding:10px;
+border-radius:50%;
+}
+
+.rating{
+color:gold;
+font-size:14px;
+}
+
+/* BUTTONS */
+.btn{
+display:block;
+text-align:center;
+margin-top:20px;
+padding:12px;
+background:#ff8c00;
+color:black;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.call-btn{
+display:block;
+text-align:center;
+margin-top:10px;
+padding:10px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- 🔥 NAVBAR -->
+<header>
+<div class="logo">🚖 SKS HUB</div>
+
+<nav>
+<a href="index.html" class="nav-btn">Home</a>
+<a href="flight.html" class="nav-btn">Flights</a>
+<a href="bus.html" class="nav-btn">Bus</a>
+<a href="railways.html" class="nav-btn">Railways</a>
+<a href="hotels.html" class="nav-btn">Hotels</a>
+<a href="contact.html" class="nav-btn">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+<img src="log white swift cab.png" alt="Swift Cab">
+</div>
+
+<div class="container">
+
+<div class="success">✅ Ride Confirmed Successfully!</div>
+
+<!-- RIDE DETAILS -->
+<div class="card">
+<h2>Ride Details</h2>
+
+<p><b>📍 Pickup:</b> <span id="pickup"></span></p>
+<p><b>🏁 Drop:</b> <span id="drop"></span></p>
+<p><b>📅 Date:</b> <span id="date"></span></p>
+
+<div class="cab-box">
+🚗 Cab Type: <span id="cab"></span>
+</div>
+</div>
+
+<!-- DRIVER DETAILS -->
+<div class="card">
+<h2>👨‍✈️ Driver Details</h2>
+
+<div class="driver">
+<div class="driver-icon">😎</div>
+
+<div>
+<p><b>Name:</b> Ramesh Kumar</p>
+<p><b>Car No:</b> TN 01 AB 1234</p>
+<p class="rating">⭐ 4.8 Rating</p>
+</div>
+</div>
+
+<a href="tel:9876543210" class="call-btn">📞 Call Driver</a>
+
+</div>
+
+<a href="index.html" class="btn">🏠 Back to Home</a>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("pickup").textContent = params.get("pickup");
+document.getElementById("drop").textContent = params.get("drop");
+document.getElementById("date").textContent = params.get("date");
+document.getElementById("cab").textContent = params.get("cab");
+</script>
+
+</body>
+</html>

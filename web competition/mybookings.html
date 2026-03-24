@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Bookings - SKS HUB</title>
+
+<style>
+
+/* GENERAL */
+
+body{
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
+color:white;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:black;
+border-bottom:2px solid #ff8c00;
+}
+
+.logo{
+font-size:24px;
+color:#ff8c00;
+font-weight:bold;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:white;
+}
+
+nav a:hover{
+color:#ff8c00;
+}
+
+
+/* TITLE */
+
+.title{
+text-align:center;
+margin-top:40px;
+}
+
+.title h1{
+font-size:40px;
+color:#ff8c00;
+}
+
+.title p{
+color:#ccc;
+}
+
+
+/* TABLE */
+
+.container{
+width:90%;
+margin:auto;
+margin-top:40px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#111;
+border-radius:10px;
+overflow:hidden;
+}
+
+th, td{
+padding:15px;
+text-align:center;
+border-bottom:1px solid #333;
+}
+
+th{
+background:#ff8c00;
+color:black;
+}
+
+tr:hover{
+background:#222;
+}
+
+/* STATUS */
+
+.completed{
+color:#00ff9c;
+font-weight:bold;
+}
+
+.upcoming{
+color:#ffc107;
+font-weight:bold;
+}
+
+.cancelled{
+color:#ff4d4d;
+font-weight:bold;
+}
+
+
+/* BACK BUTTON */
+
+.back{
+text-align:center;
+margin-top:40px;
+}
+
+.back button{
+padding:12px 25px;
+background:#ff8c00;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.back button:hover{
+background:#ffa733;
+}
+
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:black;
+margin-top:50px;
+border-top:2px solid #ff8c00;
+color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">🚖 SKS HUB</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="flight.html">Flights</a>
+<a href="bus.html">Bus</a>
+<a href="railways.html">Railways</a>
+<a href="cab.html">Cab</a>
+<a href="roombooking.html">Hotels</a>
+</nav>
+
+</header>
+
+
+<div class="title">
+
+<h1>My Bookings</h1>
+<p>View all your previous and upcoming bookings</p>
+
+</div>
+
+
+<div class="container">
+
+<table>
+
+<tr>
+<th>Booking ID</th>
+<th>Service</th>
+<th>From</th>
+<th>To</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+
+<tr>
+<td>SKS1001</td>
+<td>Flight</td>
+<td>Chennai</td>
+<td>Singapore</td>
+<td>10 Mar 2026</td>
+<td class="completed">Completed</td>
+</tr>
+
+
+<tr>
+<td>SKS1002</td>
+<td>Bus</td>
+<td>Chennai</td>
+<td>Coimbatore</td>
+<td>15 Mar 2026</td>
+<td class="completed">Completed</td>
+</tr>
+
+
+<tr>
+<td>SKS1003</td>
+<td>Cab</td>
+<td>Airport</td>
+<td>Velachery</td>
+<td>18 Mar 2026</td>
+<td class="upcoming">Upcoming</td>
+</tr>
+
+
+<tr>
+<td>SKS1004</td>
+<td>Hotel</td>
+<td>Goa</td>
+<td>Sea View Resort</td>
+<td>20 Feb 2026</td>
+<td class="cancelled">Cancelled</td>
+</tr>
+
+
+</table>
+
+</div>
+
+
+<div class="back">
+
+<button onclick="window.location.href='index.html'">
+Back to Home
+</button>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 SKS HUB Travel Platform</p>
+
+</footer>
+
+
+</body>
+</html>

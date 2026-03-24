@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKS HUB - User Login</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
+color:white;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:black;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#ff8c00;
+}
+
+nav a{
+margin:0 18px;
+text-decoration:none;
+color:white;
+font-size:18px;
+}
+
+nav a:hover{
+color:#ff8c00;
+}
+
+/* LOGIN BOX */
+.login-container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:80vh;
+}
+
+.login-box{
+background:#111;
+padding:40px;
+width:350px;
+border-radius:10px;
+border:1px solid #ff8c00;
+text-align:center;
+}
+
+.login-box h2{
+color:#ff8c00;
+margin-bottom:20px;
+}
+
+/* INPUT */
+.login-box input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:6px;
+border:none;
+background:#222;
+color:white;
+}
+
+/* BUTTON */
+.login-box button{
+background:#ff8c00;
+border:none;
+padding:12px;
+width:100%;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+margin-top:10px;
+}
+
+/* FORGOT PASSWORD */
+.forgot{
+margin-top:10px;
+font-size:14px;
+}
+
+.forgot a{
+color:#ff8c00;
+text-decoration:none;
+}
+
+/* MESSAGE */
+.message{
+margin-top:10px;
+font-size:14px;
+}
+
+.error{color:red;}
+.success{color:lightgreen;}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+background:black;
+color:#aaa;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">SKS HUB</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="flight.html">Flights</a>
+<a href="bus.html">Bus</a>
+<a href="railways.html">Railways</a>
+<a href="cab.html">Cab</a>
+<a href="roombooking.html">Hotels</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+
+<div class="login-container">
+
+<div class="login-box">
+
+<h2>User Login</h2>
+
+<form onsubmit="loginUser(event)">
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<input type="password" id="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="message" id="message"></div>
+
+<div class="forgot">
+<a href="index.html">Create Account?</a>
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+<p>© 2026 SKS HUB Travel Platform</p>
+</footer>
+
+
+<script>
+
+function loginUser(e){
+e.preventDefault();
+
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+let message = document.getElementById("message");
+
+let users = JSON.parse(localStorage.getItem("users")) || {};
+
+if(users[email] && users[email].password === password){
+
+// STORE USER
+localStorage.setItem("loggedInUser", email);
+localStorage.setItem("loggedInName", users[email].name);
+
+// SUCCESS MESSAGE
+message.innerHTML = "Login successful ✅";
+message.className = "message success";
+
+// REDIRECT
+setTimeout(()=>{
+window.location.href = "index.html";
+},1000);
+
+}else{
+message.innerHTML = "Invalid email or password ❌";
+message.className = "message error";
+}
+
+}
+
+</script>
+
+</body>
+</html>
